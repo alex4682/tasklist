@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/tasklist/static/js/main.45e8183a.js",
+    "static/js/453.11cf0f20.chunk.js": "/tasklist/static/js/453.11cf0f20.chunk.js",
+    "index.html": "/tasklist/index.html",
+    "main.45e8183a.js.map": "/tasklist/static/js/main.45e8183a.js.map",
+    "453.11cf0f20.chunk.js.map": "/tasklist/static/js/453.11cf0f20.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.45e8183a.js"
+  ]
+}
