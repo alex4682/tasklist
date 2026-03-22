@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { addTask } from "../redux/reducer";
+import { addTaskAsync } from "../redux/operations";
 
 export const TaskForm = () => {
 
@@ -14,7 +14,7 @@ export const TaskForm = () => {
             }
 
             const newId = tasks.length > 0 ? (Math.max(...tasks.map(t => parseInt(t.id))) + 1).toString() : "1";
-            dispatch(addTask({ id: newId, text: form.elements.task.value, completed: false }))
+            dispatch(addTaskAsync({ id: newId, name: form.elements.task.value, completed: false }))
             form.reset();
         }}>
             <input type="text" name="task" placeholder="Enter task" required />

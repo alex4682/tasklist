@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTask, toggleCompleted } from "../redux/reducer";
+import { deleteTaskAsync, toggleCompletedAsync } from "../redux/operations";
 export const Tasklist = () => {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.items);
@@ -18,10 +18,10 @@ export const Tasklist = () => {
         {filteredTasks && filteredTasks.map((task) => (
           <li key={task.id}>
             <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-              {task.text}
+              {task.name}
             </span>
-            <button onClick={() => dispatch(deleteTask(task.id))}>Delete</button>
-            <input type="checkbox" name="completed" id={`task-${task.id}`} checked={task.completed} onChange={(e) => dispatch(toggleCompleted(task.id))} />
+            <button onClick={() => dispatch(deleteTaskAsync(task.id))}>Delete</button>
+            <input type="checkbox" name="completed" id={`task-${task.id}`} checked={task.completed} onChange={(e) => dispatch(toggleCompletedAsync(task))} />
           </li>
         ))}
       </ul>
